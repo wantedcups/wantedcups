@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WantedCups - Tienda de tazas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: url('https://i.imgur.com/zQ5R4lQ.jpeg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .idioma {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .producto {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .producto img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+    .info {
+      flex: 1;
+    }
+    .info h2 {
+      margin: 0 0 10px 0;
+      color: #222;
+    }
+    .info p {
+      margin: 5px 0;
+      color: #555;
+      white-space: pre-wrap;
+    }
+    button {
+      background: #0070ba;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #005c99;
+    }
+    .legal-section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 6px;
+      color: #222;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .legal-section h3 {
+      margin-top: 0;
+      color: #0070ba;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="idioma">
+    <button onclick="cambiarIdioma()" id="idioma-btn">English</button>
+  </div>
+
+  <h1 id="titulo">WantedCups - Tienda de Tazas</h1>
+
+  <!-- PRODUCTOS -->
+
+  <!-- Luffy -->
+  <div class="producto">
+    <img src="https://i.imgur.com/auKCo86.jpeg" />
+    <div class="info">
+      <h2 id="titulo-luffy">Taza Luffy</h2>
+      <p id="desc-luffy">Luffy, el Rey del Café... digo, de los Piratas
+Nada como empezar el día con una sonrisa y un buen “¡Gomu Gomu no Café!” Esta taza de Luffy viene cargada de energía, personalidad y ganas de conquistar el mundo (o al menos tu escritorio). Ideal para fans con espíritu libre y sueño eterno.
+¿Listo para armar tu tripulación de tazas? ¡Encuentra la tuya y prepárate para zarpar al sabor!</p>
+      <p><strong id="precio-label-luffy">Precio:</strong> 40€</p>
+      <button onclick="pagar('Modelo 1', 40)" id="btn-luffy">Comprar con PayPal</button>
+    </div>
+  </div>
+
+  <!-- Chopper -->
+  <div class="producto">
+    <img src="https://i.imgur.com/WCGdVza.jpeg" />
+    <div class="info">
+      <h2 id="titulo-chopper">Taza Chopper</h2>
+      <p id="desc-chopper">Chopper, el doctor más adorable de los mares
+¿Necesitas ternura con tu café? ¡Chopper te receta una dosis diaria de buen humor y estilo mugiwara! Esta taza es tan linda que podrías gritar “¡Qué vergüenza, baka!” al verla... pero no te hagas, sabes que la quieres.
+Perfecta para mañanas frías, corazones cálidos y fans que aman al reno más kawaii del East Blue.
+Hazte con la tuya y empieza el día con una sonrisa tan grande como el sombrero de Chopper.</p>
+      <p><strong id="precio-label-chopper">Precio:</strong> 40€</p>
+      <button onclick="pagar('Modelo 2', 40)" id="btn-chopper">Comprar con PayPal</button>
+    </div>
+  </div>
+
+  <!-- Sabo -->
+  <div class="producto">
+    <img src="https://i.imgur.com/iCIs6LO.jpeg" />
+    <div class="info">
+      <h2 id="titulo-sabo">Taza Sabo</h2>
+      <p id="desc-sabo">Sabo, fuego, elegancia y cafeína
+Prepárate para empezar el día con la fuerza de un Mera Mera no Mi bien caliente. Esta taza de Sabo es ideal para quienes no temen encender la chispa de la revolución antes del desayuno. Con su sombrero, su pipa y su actitud de hermano mayor cool, esta taza te acompaña en cada sorbo como si fuera una causa noble.
+Perfecta para estrategas con alma ardiente y fans que no se olvidan de los lazos más fuertes: los de hermandad y... ¡los del buen café!
+Hazte con la tuya y deja que cada mañana arda con motivación.</p>
+      <p><strong id="precio-label-sabo">Precio:</strong> 40€</p>
+      <button onclick="pagar('Modelo 3', 40)" id="btn-sabo">Comprar con PayPal</button>
+    </div>
+  </div>
+
+  <!-- Ace -->
+  <div class="producto">
+    <img src="https://i.imgur.com/OhpALD5.jpeg" />
+    <div class="info">
+      <h2 id="titulo-ace">Taza Portgas D. Ace</h2>
+      <p id="desc-ace">Ace, el heredero de la llama y el buen gusto
+Con esta taza de Portgas D. Ace, cada sorbo viene con una explosión de energía y actitud. Ideal para fans intensos, fieles al Sombrero de Paja y con alma de comandante. ¿Frío? ¿Cansado? ¡No mientras esta taza esté en tu mano!
+Con su clásico tatuaje "ASCE", su sombrero con caritas y esa mirada que dice "¿ya está listo el desayuno?", esta taza no es solo un homenaje… es una declaración de fuego.
+Advertencia: no resistente a la tristeza por cierto arco argumental (pero sí al lavavajillas).</p>
+      <p><strong id="precio-label-ace">Precio:</strong> 40€</p>
+      <button onclick="pagar('Modelo 4', 40)" id="btn-ace">Comprar con PayPal</button>
+    </div>
+  </div>
+
+  <!-- SECCIONES LEGALES -->
+  <div class="legal-section" id="terminos-condiciones">
+    <h3 id="titulo-terminos">Términos y Condiciones</h3>
+    <p id="texto-terminos">
+1. El uso de esta tienda implica la aceptación de nuestros términos y condiciones.<br>
+2. Todos los productos están sujetos a disponibilidad.<br>
+3. Los precios incluyen IVA.<br>
+4. Los pedidos serán procesados tras la confirmación del pago.<br>
+5. Nos reservamos el derecho a modificar los productos y precios sin previo aviso.<br>
+    </p>
+  </div>
+
+  <div class="legal-section" id="politica-devoluciones">
+    <h3 id="titulo-devoluciones">Política de Devoluciones</h3>
+    <p id="texto-devoluciones">
+1. Las devoluciones son aceptadas dentro de los 4 días posteriores a la recepción del producto.<br>
+2. El producto debe estar en su estado original y sin uso.<br>
+3. Los gastos de envío para devoluciones corren por cuenta del cliente.<br>
+4. El reembolso se realizará tras recibir y verificar el producto devuelto.<br>
+    </p>
+  </div>
+
+  <script>
+    function pagar(nombreProducto, precio) {
+      const vendedorPaypal = "wantedcups@gmail.com"; // ← Aquí está tu correo
+      const url = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(vendedorPaypal)}&item_name=${encodeURIComponent(nombreProducto)}&amount=${precio}&currency_code=EUR`;
+      window.open(url, "_blank");
+    }
+
+    let idiomaActual = "es";
+
+    const textos = {
+      es: {
+        "idioma-btn": "English",
+        "titulo": "WantedCups - Tienda de Tazas",
+        "titulo-luffy": "Taza Luffy",
+        "desc-luffy": `Luffy, el Rey del Café... digo, de los Piratas
+Nada como empezar el día con una sonrisa y un buen “¡Gomu Gomu no Café!” Esta taza de Luffy viene cargada de energía, personalidad y ganas de conquistar el mundo (o al menos tu escritorio). Ideal para fans con espíritu libre y sueño eterno.
+¿Listo para armar tu tripulación de tazas? ¡Encuentra la tuya y prepárate para zarpar al sabor!`,
+        "precio-label-luffy": "Precio:",
+        "titulo-chopper": "Taza Chopper",
+        "desc-chopper": `Chopper, el doctor más adorable de los mares
+¿Necesitas ternura con tu café? ¡Chopper te receta una dosis diaria de buen humor y estilo mugiwara! Esta taza es tan linda que podrías gritar “¡Qué vergüenza, baka!” al verla... pero no te hagas, sabes que la quieres.
+Perfecta para mañanas frías, corazones cálidos y fans que aman al reno más kawaii del East Blue.
+Hazte con la tuya y empieza el día con una sonrisa tan grande como el sombrero de Chopper.`,
+        "precio-label-chopper": "Precio:",
+        "titulo-sabo": "Taza Sabo",
+        "desc-sabo": `Sabo, fuego, elegancia y cafeína
+Prepárate para empezar el día con la fuerza de un Mera Mera no Mi bien caliente. Esta taza de Sabo es ideal para quienes no temen encender la chispa de la revolución antes del desayuno. Con su sombrero, su pipa y su actitud de hermano mayor cool, esta taza te acompaña en cada sorbo como si fuera una causa noble.
+Perfecta para estrategas con alma ardiente y fans que no se olvidan de los lazos más fuertes: los de hermandad y... ¡los del buen café!
+Hazte con la tuya y deja que cada mañana arda con motivación.`,
+        "precio-label-sabo": "Precio:",
+        "titulo-ace": "Taza Portgas D. Ace",
+        "desc-ace": `Ace, el heredero de la llama y el buen gusto
+Con esta taza de Portgas D. Ace, cada sorbo viene con una explosión de energía y actitud. Ideal para fans intensos, fieles al Sombrero de Paja y con alma de comandante. ¿Frío? ¿Cansado? ¡No mientras esta taza esté en tu mano!
+Con su clásico tatuaje "ASCE", su sombrero con caritas y esa mirada que dice "¿ya está listo el desayuno?", esta taza no es solo un homenaje… es una declaración de fuego.
+Advertencia: no resistente a la tristeza por cierto arco argumental (pero sí al lavavajillas).`,
+        "precio-label-ace": "Precio:",
+        "titulo-terminos": "Términos y Condiciones",
+        "texto-terminos": `1. El uso de esta tienda implica la aceptación de nuestros términos y condiciones.
+2. Todos los productos están sujetos a disponibilidad.
+3. Los precios incluyen IVA.
+4. Los pedidos serán procesados tras la confirmación del pago.
+5. Nos reservamos el derecho a modificar los productos y precios sin previo aviso.`,
+        "titulo-devoluciones": "Política de Devoluciones",
+        "texto-devoluciones": `1. Las devoluciones son aceptadas dentro de los 4 días posteriores a la recepción del producto.
+2. El producto debe estar en su estado original y sin uso.
+3. Los gastos de envío para devoluciones corren por cuenta del cliente.
+4. El reembolso se realizará tras recibir y verificar el producto devuelto.`
+      },
+      en: {
+        "idioma-btn": "Español",
+        "titulo": "WantedCups - Mug Store",
+        "titulo-luffy": "Luffy Mug",
+        "desc-luffy": `Luffy, the King of Coffee... I mean, Pirates
+Nothing like starting the day with a smile and a good “Gomu Gomu no Coffee!” This Luffy mug is packed with energy, personality, and a desire to conquer the world (or at least your desk). Perfect for free-spirited fans and eternal dreamers.
+Ready to assemble your mug crew? Find yours and set sail for flavor!`,
+        "precio-label-luffy": "Price:",
+        "titulo-chopper": "Chopper Mug",
+        "desc-chopper": `Chopper, the cutest doctor on the seas
+Need some cuteness with your coffee? Chopper prescribes a daily dose of good humor and Mugiwara style! This mug is so adorable you might scream “How embarrassing, baka!” when you see it... but admit it, you want it.
+Perfect for cold mornings, warm hearts, and fans who love the cutest reindeer in East Blue.
+Get yours and start the day with a smile as big as Chopper’s hat.`,
+        "precio-label-chopper": "Price:",
+        "titulo-sabo": "Sabo Mug",
+        "desc-sabo": `Sabo, fire, elegance, and caffeine
+Get ready to start the day with the strength of a hot Mera Mera no Mi. This Sabo mug is perfect for those who don’t fear lighting the spark of revolution before breakfast. With his hat, pipe, and cool older brother vibe, this mug accompanies you with every sip like a noble cause.
+Perfect for strategists with a fiery soul and fans who never forget the strongest bonds: brotherhood and... good coffee!
+Get yours and let every morning burn with motivation.`,
+        "precio-label-sabo": "Price:",
+        "titulo-ace": "Portgas D. Ace Mug",
+        "desc-ace": `Ace, the heir of flame and good taste
+With this Portgas D. Ace mug, every sip comes with an explosion of energy and attitude. Ideal for intense fans, faithful to the Straw Hat and with the soul of a commander. Cold? Tired? Not while this mug is in your hand!
+With his classic "ASCE" tattoo, his hat with faces, and that look that says "Is breakfast ready yet?", this mug is not just a tribute… it’s a statement of fire.
+Warning: not resistant to sadness from a certain story arc (but dishwasher safe).`,
+        "precio-label-ace": "Price:",
+        "titulo-terminos": "Terms and Conditions",
+        "texto-terminos": `1. Use of this store implies acceptance of our terms and conditions.
+2. All products are subject to availability.
+3. Prices include VAT.
+4. Orders will be processed after payment confirmation.
+5. We reserve the right to modify products and prices without prior notice.`,
+        "titulo-devoluciones": "Return Policy",
+        "texto-devoluciones": `1. Returns are accepted within 4 days after receipt of the product.
+2. The product must be in its original, unused condition.
+3. Shipping costs for returns are the responsibility of the customer.
+4. Refunds will be made after receiving and verifying the returned product.`
+      }
+    };
+
+    function cambiarIdioma() {
+      idiomaActual = idiomaActual === "es" ? "en" : "es";
+      const textosIdioma = textos[idiomaActual];
+      for (let id in textosIdioma) {
+        const el = document.getElementById(id);
+        if (el) {
+          // Si es texto con saltos de línea, mantenerlos usando innerHTML y <br>
+          if (id === "texto-terminos" || id === "texto-devoluciones") {
+            el.innerHTML = textosIdioma[id].replace(/\n/g, '<br>');
+          } else {
+            el.textContent = textosIdioma[id];
+          }
+        }
+      }
+      // El botón debe mostrar el idioma al que cambiaremos
+      document.getElementById("idioma-btn").textContent = textosIdioma["idioma-btn"];
+    }
+  </script>
+
+</body>
+</html>
